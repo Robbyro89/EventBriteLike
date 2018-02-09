@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+@import url("bootstrap.min.css");
+@import url("bootstrap-theme.css");
+
+.nav-link {
+  color: #FFFFFF!important;
+  font-size: 1.2em;
+}
+
+#brand {
+  font-size: 1.5em;
+}
+
+#navbardrop {
+  color: #FFFFFF;
+  font-size: 1.2em;
+}

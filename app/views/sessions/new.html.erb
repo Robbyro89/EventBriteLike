@@ -1,0 +1,22 @@
+<h2 style="color: #FF8C00" class="w3-jumbo" class="w3-section" style="text-shadow:1px 1px 0 #444"><b>Se connecter</b></h2>
+<br><br><br><br>
+<div class="row">
+  <div class="col-md-4 col-md-offset-3">
+    <%= form_for(:session, url: login_path) do |f| %>
+
+      <p style="color: #FF8C00"><b>Pseudo :</b></p>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <p style="color: #FF8C00"><b>Email :</b></p>
+      <%= f.email_field :email, class: 'form-control' %>
+
+      <p style="color: #FF8C00"><b>Mot de passe :</b></p>
+      <%= f.password_field :password, class: 'form-control' %>
+<br>
+      <%= f.submit "Valider", class: "btn btn-success" %>
+    <% end %>
+<br>
+  </div>
+</div>
+
+<p>Pas encore inscrit ? <%= link_to "Créer un compte", signup_path, :class => "w3-btn w3-ripple w3-blue" %></p>

@@ -1,0 +1,35 @@
+@import url("bootstrap.min.css");
+@import url("bootstrap-theme.css");
+
+/* header */
+
+#brand {
+  color: #FFFFFF;
+  font-style: bolder!important;
+  font-size: 1.8em!important;
+  font-family: monospace;
+}
+
+#sign {
+  font-family: serif;
+  background-color: #FFFFFF;
+  color: #FF8C00!important;
+  border-color: #FFFFFF!important;
+  font-size: 1.2em;
+  &:hover {
+    color: #FFFFFF!important;
+    background-color: #FF8C00;
+  }
+}
+
+#log {
+  font-family: serif;
+  background-color: #FFFFFF;
+  color: #FF8C00!important;
+  border-color: #FFFFFF!important;
+  font-size: 1.2em;
+  &:hover {
+    color: #FFFFFF!important;
+    background-color: #FF8C00;
+  }
+}
