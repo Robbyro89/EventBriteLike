@@ -1,3 +1,24 @@
 // Place all the styles related to the Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import url("bootstrap.min.css");
+@import url("bootstrap-theme.css");
+
+.row {
+  padding-left: 370px;
+  padding-bottom: 20px;
+}
+
+#btnlogin {
+  font-family: serif;
+  font-size: 1.2em;
+  border-color: #FFFFFF;
+  background-color: #FFFFFF;
+  color: #FF8C00;
+  float: right;
+  font-weight: bolder;
+  &:hover {
+    color: #FFFFFF!important;
+    background-color: #FF8C00;
+  }
+}

@@ -1,0 +1,100 @@
+<% provide(:title, current_user.name) %>
+<br>
+<h1 style="color: #FF8C00"><b><%= current_user.name %></b></h1>
+<div class="center jumbotron">
+  <h2 style="color: #FFFFFF"><b>Crée ton Evénement</b></h2>
+  <p style="color: #FFFFFF">Evénement Ou Pas Evénement, Telle Est La Question...</p>
+  <% if !current_user.created_events.any? %>
+    <div style="color: #FFFFFF"><i>Aucun Evénement</i></div>
+    <br>
+  <% else %>
+  <table class="table-hover">
+    <thead>
+      <tr>
+        <th>Event</th>
+        <th>Date</th>
+        <th>Lieu</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% current_user.created_events.each do |event| %>
+        <tr>
+          <td><%= event.description%></td>
+          <td><%= event.date.strftime("%d-%b-%Y") %></td>
+          <td><%= event.place %></td>
+          <td>
+            <%= link_to 'Invite', event_users_path(event), :class=>"btn btn-sm btn-success", :method=>:get%>
+            <%= link_to 'Show', event, :class=>"btn btn-sm btn-info", :method=>:get%>
+            <%= link_to 'Delete', event, :class=>"btn btn-sm btn-danger", :method=>:delete%>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% end %>
+  <br>
+  <div>
+    <%= link_to "Créer un Evénement", new_event_path, class: "btn btn-lg btn-outline", id: "createvent" %>
+  </div>
+</div>
+
+<br />
+
+<div class="center jumbotron">
+  <h2 style="color: #FFFFFF"><b>Evénements Auxquels Tu As Participé</b></h2>
+  <p style="color: #FFFFFF">Tu Es Venu, Tu As Vu, Tu As Vaincu</p>
+  <% if !current_user.attended_events.any? %>
+    <div style="color: #FFFFFF"><i>Aucun Evénement</i></div>
+  <% else %>
+  <table class="table-hover">
+    <thead>
+      <tr>
+        <th>Event</th>
+        <th>Date</th>
+        <th>Lieu</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% current_user.attended_events.each do |event| %>
+        <tr>
+          <td><%= event.description%></td>
+          <td><%= event.date.strftime("%d-%b-%Y") %></td>
+          <td><%= event.place %></td>
+          <td><%= link_to 'Show', event, :class=>"btn btn-sm btn-info", :method=>:get%></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% end %>
+</div>
+
+<div class="center jumbotron">
+  <h1 style="color: #FFFFFF"><b>Evènements Passés</b></h1>
+  <p style="color: #FFFFFF">Le Passé Appartient Au Passé</p>
+  <% if !current_user.attended_events.past.any? %>
+    <div style="color: #FFFFFF"><i>Aucun Evénement</i></div>
+  <% else %>
+  <table class="table-hover">
+    <thead>
+      <tr>
+        <th>Event</th>
+        <th>Date</th>
+        <th>Lieu</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% current_user.attended_events.past.each do |event| %>
+        <tr>
+          <td><%= event.description%></td>
+          <td><%= event.date.strftime("%d/%b/%Y") %></td>
+          <td><%= event.place %></td>
+          <td><%= link_to 'Show', event, :class=>"btn btn-sm btn-info", :method=>:get%></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% end %>
+</div>

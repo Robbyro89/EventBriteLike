@@ -14,7 +14,6 @@ Rails.application.routes.draw do
   post '/new_event',  to: 'events#create'
   post '/subscribe',  to: 'events#subscribe'
 
-
     resources :users
     resources :events do
       get '/users',        to: 'users#index'

@@ -1,0 +1,23 @@
+<h1 style="color: #FF8C00" class="w3-jumbo" class = w3-section style="text-shadow:1px 1px 0 #444"><b>Tu n'es pas seul...</b></h1>
+<br>
+<h4 style="color: #FF8C00"><b>Regarde !!! Il y a un monde fou ici</b></h4>
+
+<div class="jumbotron">
+  <table class="table-hover" style="color: #FFFFFF" id="profil_index">
+    <thead>
+      <tr>
+        <th style="color: #FFFFFF"><b>ID</b></th>
+        <th style="color: #FFFFFF"><b>Pseudo</b></th>
+        <th style="color: #FFFFFF"><b>Email</b></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td style="color: #FFFFFF"><%= user.id %></td>
+          <td style="color: #FFFFFF"><%= user.name %></td>
+          <td style="color: #FF8C00"><%= link_to "Voir le Profil", user_path(user), class: "btn btn-outline btn-sm", id: "profil" %></td>
+        </tr>
+      <% end %>
+  </table>
+</div>

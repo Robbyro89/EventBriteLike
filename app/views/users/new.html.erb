@@ -1,11 +1,12 @@
-<h1 style="color: #FF8C00"><b>Se connecter</b></h1>
+<h1 style="color: #FF8C00"><b>S'enregistrer<b></h1>
 
 <div class="container">
   <div class="Jumbotron" id="Jcreate">
     <h3 style="color: #FFFFFF" id="titre"><b>Remplis tous les champs</b></h3>
     <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <%= form_for(:session, url: login_path) do |f| %>
+    <div class="col-md-6 col-md-offset-3" id="formcreate">
+      <%= form_for(@user, url: signup_path) do |f| %>
+        <%= render 'users/form' %>
 <br>
         <p style="color: #FFFFFF"><b>Pseudo :</b></p>
         <%= f.text_field :name, class: 'form-control' %>
@@ -16,10 +17,11 @@
         <p style="color: #FFFFFF"><b>Mot de passe :</b></p>
         <%= f.password_field :password, class: 'form-control' %>
 <br>
-        <%= f.submit "Valider", class: "btn btn-outline", id: "btnlogin" %>
+        <p style="color: #FFFFFF"><b>Confirmation :</b></p>
+        <%= f.password_field :password_confirmation, class: 'form-control' %>
+<br>
+        <%= f.submit "S'inscrire", class: "btn btn-outline", id: "btncreate" %>
       <% end %>
-<br><br>
-<p style="float: left">Pas encore inscrit ? <%= link_to "Créer un compte", signup_path %></p>
     </div>
     </div>
   </div>

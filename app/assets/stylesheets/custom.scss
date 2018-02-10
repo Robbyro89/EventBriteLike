@@ -3,6 +3,15 @@
 
 /* header */
 
+.dropdown-menu {
+  background-color: #FF8C00!important;
+  color: #FFFFFF!important;
+  &:hover {
+    color: #FF8C00!important;
+    background-color: #FFFFFF!important;
+  }
+}
+
 #brand {
   color: #FFFFFF;
   font-style: bolder!important;
@@ -14,7 +23,7 @@
   font-family: serif;
   background-color: #FFFFFF;
   color: #FF8C00!important;
-  border-color: #FFFFFF!important;
+  border-color: #FF8C00!important;
   font-size: 1.2em;
   &:hover {
     color: #FFFFFF!important;
@@ -23,6 +32,30 @@
 }
 
 #log {
+  font-family: serif;
+  background-color: #FFFFFF;
+  color: #FF8C00!important;
+  border-color: #FF8C00!important;
+  font-size: 1.2em;
+  &:hover {
+    color: #FFFFFF!important;
+    background-color: #FF8C00;
+  }
+}
+
+#index {
+  font-family: serif;
+  background-color: #FFFFFF;
+  color: #FF8C00!important;
+  border-color: #FFFFFF!important;
+  font-size: 1.2em;
+  &:hover {
+    color: #FFFFFF!important;
+    background-color: #FF8C00;
+  }
+}
+
+#drop {
   font-family: serif;
   background-color: #FFFFFF;
   color: #FF8C00!important;
