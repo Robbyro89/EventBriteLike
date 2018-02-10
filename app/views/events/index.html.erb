@@ -1,0 +1,23 @@
+<h1>Welcome !</h1>
+<h2>Tu veux créer un évènement ?</h2>
+<%= render 'events/new_event' %>
+<br>
+<div class="center jumbotron">
+  <h3>Actuels</h3>
+  <br>
+  <% if !@events.current.any? %>
+    <div>Aucun évènement</div>
+  <% else %>
+    <%= render 'events/current_events' %>
+  <% end %>
+</div>
+
+<div class="center jumbotron">
+  <h3>Passés</h3>
+  <br>
+  <% if !@events.past.any? %>
+    <div>Aucun évènement</div>
+  <% else %>
+    <%= render 'events/past_events' %>
+  <% end %>
+</div>

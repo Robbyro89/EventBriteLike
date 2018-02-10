@@ -1,0 +1,32 @@
+<h1>Event</h1>
+<h2>Organisateur : <%= @event.creator.name %></h2>
+<h2><%= @event.place %></h2>
+<h2><%= @event.date.strftime("%d %B %Y") %></h2>
+<h2><%= @event.id %></h2>
+<div class="center jumbotron">
+
+
+  <h3>Liste des participants</h3>
+  <br>
+  <% if !@event.attendees.any? %>
+    <div>Aucun participant</div>
+  <% else %>
+    <table class="event-show">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @event.attendees.each do |attendee| %>
+          <tr>
+            <td><%= attendee.name%></td>
+            <td><%= attendee.email %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+</div>

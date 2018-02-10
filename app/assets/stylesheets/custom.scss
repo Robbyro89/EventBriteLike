@@ -3,12 +3,30 @@
 
 /* header */
 
+
+#navheader {
+  background-color: #FF8C00;
+}
+
 .dropdown-menu {
-  background-color: #FF8C00!important;
-  color: #FFFFFF!important;
+  background-color: #FFFFFF!important;
+  color: orange!important;
   &:hover {
-    color: #FF8C00!important;
-    background-color: #FFFFFF!important;
+    color: #FFFFFF!important;
+    background-color: #FF8C00!important;
+  }
+}
+
+#drop {
+  text-align: right;
+  font-family: serif;
+  background-color: #FFFFFF;
+  color: #FF8C00!important;
+  border-color: #FFFFFF!important;
+  font-size: 1.2em;
+  &:hover {
+    color: #FFFFFF!important;
+    background-color: #FF8C00;
   }
 }
 
@@ -43,7 +61,7 @@
   }
 }
 
-#index {
+#index1 {
   font-family: serif;
   background-color: #FFFFFF;
   color: #FF8C00!important;
@@ -55,7 +73,7 @@
   }
 }
 
-#drop {
+#index2 {
   font-family: serif;
   background-color: #FFFFFF;
   color: #FF8C00!important;

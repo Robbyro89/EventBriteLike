@@ -1,0 +1,27 @@
+// Place all the styles related to the Events controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import url("bootstrap.min.css");
+@import url("bootstrap-theme.css");
+
+#btncreatevent {
+  font-family: serif;
+  font-weight: bolder;
+  background-color: #FFFFFF!important;
+  color: #FF8C00!important;
+  &:hover {
+    color: #FFFFFF!important;
+    background-color: #FF8C00!important;
+  }
+}
+
+#event {
+  font-family: serif;
+  font-weight: bolder;
+  background-color: #FFFFFF!important;
+  color: #FF8C00!important;
+  &:hover {
+    color: #FFFFFF!important;
+    background-color: #FF8C00!important;
+  }
+}
