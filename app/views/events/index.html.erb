@@ -1,22 +1,21 @@
-<h1>Welcome !</h1>
-<h2>Tu veux créer un évènement ?</h2>
-<%= render 'events/new_event' %>
-<br>
+<h1 style="color: #FF8C00" class="w3-jumbo" class = w3-section style="text-shadow:1px 1px 0 #444"><b>Que du lourd...</b></h1>
+<h2 style="color: #FF8C00"><b>Quels sont les événements en vogues du moment?</b></h2>
+
 <div class="center jumbotron">
-  <h3>Actuels</h3>
-  <br>
+  <h3 style="color: #FFFFFF"><b>Evénements à Venir</b></h3>
+
   <% if !@events.current.any? %>
-    <div>Aucun évènement</div>
+    <div style="color: #FFFFFF"><i>Aucun événement</i></div>
   <% else %>
     <%= render 'events/current_events' %>
   <% end %>
 </div>
 
 <div class="center jumbotron">
-  <h3>Passés</h3>
+  <h3 style="color: #FFFFFF"><b>Evénements Passés</b></h3>
   <br>
   <% if !@events.past.any? %>
-    <div>Aucun évènement</div>
+    <div style="color: #FFFFFF"><i>Aucun évènement</i></div>
   <% else %>
     <%= render 'events/past_events' %>
   <% end %>

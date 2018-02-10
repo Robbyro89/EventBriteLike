@@ -1,15 +1,19 @@
-<h1>Event</h1>
-<h2>Organisateur : <%= @event.creator.name %></h2>
-<h2><%= @event.place %></h2>
-<h2><%= @event.date.strftime("%d %B %Y") %></h2>
-<h2><%= @event.id %></h2>
-<div class="center jumbotron">
+<h1 style="color: #FF8C00"><b>Regarde un peu cet Evénement de dingue !!!</b></h1>
 
+<div class="center jumbotron" style="color: #FFFFFF">
+  <h2><b>Evénement :</b> <i>#<%= @event.id %></i></h2>
+  <h4><b>Organisateur :</b> <i><%= @event.creator.name %></i></h4>
+  <h4><b>Lieu de l'événement :</b> <i><%= @event.place %></i></h4>
+  <h4><b>Date de l'événement :</b> <i><%= @event.date.strftime("%d %B %Y") %></i></h4>
+  <h4><b>description de l'événement :</b></h4>
+  <h6><li><i><%= @event.description %></i></li></h6>
+</div>
 
-  <h3>Liste des participants</h3>
+<div class="center jumbotron" style="color: #FFFFFF">
+  <h3><b>Wouaaah ! Tous les followers!!!</b></h3>
   <br>
   <% if !@event.attendees.any? %>
-    <div>Aucun participant</div>
+    <div><i>Aucun participant</i></div>
   <% else %>
     <table class="event-show">
       <thead>

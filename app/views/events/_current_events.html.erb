@@ -1,26 +1,26 @@
-<table class="table-hover index">
+<table class="table">
   <thead>
     <tr>
-      <th>Date</th>
-      <th>Lieu</th>
-      <th>Créateur</th>
+      <th style="color: #FFFFFF"><b>Lieu</b></th>
+      <th style="color: #FFFFFF"><b>Date</b></th>
+      <th style="color: #FFFFFF"><b>Créateur</b></th>
+      <th style="color: #FFFFFF"><b>Action(s)</b></th>
     </tr>
   </thead>
 
   <tbody>
     <% @events.current.each do |event| %>
       <tr>
-        <td><%= event.date.strftime("%d-%b-%Y") %></td>
-        <td><%= event.place %></td>
-        <td><%= event.creator.name %></td>
+        <td style="color: #FFFFFF"><%= event.place %></td>
+        <td style="color: #FFFFFF"><%= event.date.strftime("%d-%b-%Y") %></td>
+        <td style="color: #FFFFFF"><%= event.creator.name %></td>
         <% if logged_in? %>
-          <td><ul class="button_list_table">
-            <li><%= link_to 'Show', event, :class=>"btn btn-sm btn-info", :method=>:get%></li>
-            <!--<li><%= link_to 'Edit', edit_event_path(event), :class=>"btn btn-sm btn-warning", :method=>:get%></li>-->
-            <% if !(event.attendees.include? current_user) %>
-              <li><%= link_to 'Participer',subscribe_path(id: event.id) , :class=>"btn btn-sm btn-primary", :method=>:post %></li>
-            <% end %>
-          </ul></td>
+          <td>
+            <%= link_to 'Visionner', event, :class=>"btn btn-sm btn-outline", :method=>:get :id=>"voir" %>
+          <% if !(event.attendees.include? current_user) %>
+            <%= link_to 'Participer',subscribe_path(id: event.id) , :class=>"btn btn-sm btn-outline", :method=>:post %>
+          </td>
+          <% end %>
         <% end %>
       </tr>
     <% end %>

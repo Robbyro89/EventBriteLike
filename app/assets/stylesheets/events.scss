@@ -9,6 +9,7 @@
   font-weight: bolder;
   background-color: #FFFFFF!important;
   color: #FF8C00!important;
+  border-color: #FFFFFF!important;
   &:hover {
     color: #FFFFFF!important;
     background-color: #FF8C00!important;
@@ -20,8 +21,45 @@
   font-weight: bolder;
   background-color: #FFFFFF!important;
   color: #FF8C00!important;
+  border-color: #FFFFFF!important;
   &:hover {
     color: #FFFFFF!important;
     background-color: #FF8C00!important;
+  }
+}
+
+#inviter {
+  font-family: serif;
+  font-weight: bolder;
+  background-color: #FFFFFF!important;
+  color: #00008B!important;
+  border-color: #FFFFFF!important;
+  &:hover {
+    color: #FFFFFF!important;
+    background-color: #00008B!important;
+  }
+}
+
+#voir {
+  font-family: serif;
+  font-weight: bolder;
+  background-color: #FFFFFF!important;
+  color: #006400!important;
+  border-color: #FFFFFF!important;
+  &:hover {
+    color: #FFFFFF!important;
+    background-color: #006400!important;
+  }
+}
+
+#Supprimer {
+  font-family: serif;
+  font-weight: bolder;
+  border-color: #FFFFFF!important;
+  background-color: #FFFFFF!important;
+  color: #FF0000!important;
+  &:hover {
+    color: #FFFFFF!important;
+    background-color: #FF0000!important;
   }
 }

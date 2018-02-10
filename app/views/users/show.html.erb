@@ -1,32 +1,31 @@
-<% provide(:title, current_user.name) %>
-<br>
 <h1 style="color: #FF8C00"><b><%= current_user.name %></b></h1>
 <div class="center jumbotron">
   <h2 style="color: #FFFFFF"><b>Crée ton Evénement</b></h2>
-  <p style="color: #FFFFFF">Evénement Ou Pas Evénement, Telle Est La Question...</p>
+  <p style="color: #FFFFFF"><b>Evénement Ou Pas Evénement, Telle Est La Question...</b></p>
   <% if !current_user.created_events.any? %>
     <div style="color: #FFFFFF"><i>Aucun Evénement</i></div>
     <br>
   <% else %>
-  <table class="table-hover">
+  <table class="table">
     <thead>
       <tr>
-        <th>Event</th>
-        <th>Date</th>
-        <th>Lieu</th>
+        <th style="color:#FFFFFF"><b>Lieu</b></th>
+        <th style="color:#FFFFFF"><b>Date</b></th>
+        <th style="color:#FFFFFF"><b>Evénement</b></th>
+        <th style="color:#FFFFFF"><b>Action(s)</b></th>
       </tr>
     </thead>
 
     <tbody>
       <% current_user.created_events.each do |event| %>
         <tr>
-          <td><%= event.description%></td>
-          <td><%= event.date.strftime("%d-%b-%Y") %></td>
-          <td><%= event.place %></td>
+          <td style="color:#FFFFFF"><%= event.place %></td>
+          <td style="color:#FFFFFF"><%= event.date.strftime("%d-%b-%Y") %></td>
+          <td style="color:#FFFFFF"><%= event.description%></td>
           <td>
-            <%= link_to 'Invite', event_users_path(event), :class=>"btn btn-sm btn-success", :method=>:get%>
-            <%= link_to 'Show', event, :class=>"btn btn-sm btn-info", :method=>:get%>
-            <%= link_to 'Delete', event, :class=>"btn btn-sm btn-danger", :method=>:delete%>
+            <%= link_to 'Inviter', event_users_path(event), :class=>"btn btn-sm btn-outline", :method=>:get, :id=>"inviter" %>
+            <%= link_to 'Visionner', event, :class=>"btn btn-sm btn-outline", :method=>:get, :id=>"voir" %>
+            <%= link_to 'Supprimer', event, :class=>"btn btn-sm btn-outline", :method=>:delete, :id=>"Supprimer" %>
           </td>
         </tr>
       <% end %>
@@ -42,7 +41,7 @@
 <br />
 
 <div class="center jumbotron">
-  <h2 style="color: #FFFFFF"><b>Evénements Auxquels Tu As Participé</b></h2>
+  <h2 style="color: #FFFFFF"><b>Evénements Auxquels Tu vas Participer</b></h2>
   <p style="color: #FFFFFF">Tu seras Venu, Tu Auras Vu, Tu Auras Participu</p>
   <% if !current_user.attended_events.any? %>
     <div style="color: #FFFFFF"><i>Aucun Evénement</i></div>
@@ -50,7 +49,7 @@
   <table class="table-hover">
     <thead>
       <tr>
-        <th>Event</th>
+        <th>Evénement</th>
         <th>Date</th>
         <th>Lieu</th>
       </tr>
@@ -62,7 +61,7 @@
           <td><%= event.description%></td>
           <td><%= event.date.strftime("%d-%b-%Y") %></td>
           <td><%= event.place %></td>
-          <td><%= link_to 'Show', event, :class=>"btn btn-sm btn-info", :method=>:get%></td>
+          <td><%= link_to 'Voir', event, :class=>"btn btn-sm btn-info", :method=>:get%></td>
         </tr>
       <% end %>
     </tbody>
@@ -79,7 +78,7 @@
   <table class="table-hover">
     <thead>
       <tr>
-        <th>Event</th>
+        <th>Evénement</th>
         <th>Date</th>
         <th>Lieu</th>
       </tr>
@@ -91,7 +90,7 @@
           <td><%= event.description%></td>
           <td><%= event.date.strftime("%d/%b/%Y") %></td>
           <td><%= event.place %></td>
-          <td><%= link_to 'Show', event, :class=>"btn btn-sm btn-info", :method=>:get%></td>
+          <td><%= link_to 'Voir', event, :class=>"btn btn-sm btn-info", :method=>:get%></td>
         </tr>
       <% end %>
     </tbody>
