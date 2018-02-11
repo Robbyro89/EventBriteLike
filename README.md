@@ -2,6 +2,7 @@ ___
 
 # Bienvenue sur le README de **EventBriteLike** #
 ### L'application qui gère des événements du monde entier ###
+###### Lisez le bien svp, surtout la section *Remerciements* ######
 ___
 
 ##### Prologue #####
@@ -41,20 +42,16 @@ ___
 * Continuer sur la lancée des boutons tout en couleurs avec le *hover* en couleurs inversées.
 * Mettre en place des boutons de type *group* pour qu'ils rendent un beau visuel et que je puisse les personnaliser à ma convenance.
 </p>
+___
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+##### Remerciements #####
+<p>
+* Un grand merci à Sébastien Rombaut *(alias seb sur Slack)* pour avoir pris de son temps afin de voir avec moi un peu plus en profondeur concernant les associations de modèles, mais aussi sur comment tester en *rails console*.
+* Un grand merci également à Daniel Coloma *(alias Daniel sur Slack)* pour les quelques parties de codes qui m'ont fortement inspirées pour l'écriture du mien, ainsi que pour l'idée d'utiliser des *jumbotrons* quand je me prenais la tête avec mes fameuse *card bootstrap*.
+* Un grand merci enfin à certains de mes correcteurs tels Samba *(alias Samba sur Slack)*, Aldaïr *(alias Aldair sur Slack)* et Simon Wyckaert *(alias simwyck sur Slack)* pour m'avoir soutenue lors des corrections concernant ce projet et qui ont chercher à comprendre d'abord pourquoi tant des problèmes...
 </p>
+___
+
+###### Lien Heroku ######
+
+https://event-brite-like.herokuapp.com/
