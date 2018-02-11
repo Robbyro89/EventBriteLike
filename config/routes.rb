@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
 
-  get '/current_user', to: 'user#show'
   get '/index',        to: 'users#index'
   get  '/signup',      to: 'users#new'
   post '/signup',      to: 'users#create'
