@@ -25,7 +25,7 @@ class EventsController < ApplicationController
 
   def subscribe
     @event.attendees << current_user
-    flash.now[:success] = "Participation with success"
+    flash.now[:success] = "Tu rejoints l'événement"
     redirect_to root_path
   end
 
@@ -34,13 +34,13 @@ class EventsController < ApplicationController
     @user = User.find(params[:id])
     puts @event.inspect
     @event.attendees << @user
-    flash.now[:success] = "Participation with success"
+    flash.now[:success] = "Cet(te) ami(e) rejoint l'événement"
     redirect_to @event
   end
 
   def destroy
     @event.destroy
-    flash.now[:success] = "Delete with success !"
+    flash.now[:success] = "Evénement supprimé"
     redirect_to current_user
   end
 

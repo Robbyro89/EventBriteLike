@@ -3,22 +3,25 @@
 <h4 style="color: #FF8C00"><b>Regarde !!! Il y a un monde fou ici</b></h4>
 
 <div class="jumbotron">
-  <table class="table" style="color: #FFFFFF" id="profil_index">
+  <table class="table table-bordered" style="color: #FFFFFF" id="profil_index">
     <thead>
       <tr>
         <th style="color: #FFFFFF"><b>ID</b></th>
         <th style="color: #FFFFFF"><b>Pseudo</b></th>
         <th style="color: #FFFFFF"><b>Email</b></th>
-        <th style="color: #FFFFFF"><b>Lien vers le Profil</b></th>
+        <th style="color: #FFFFFF"><b>Action(s)</b></th>
       </tr>
     </thead>
     <tbody>
-      <% @users.each do |user| %>
+      <% @users.reject{|user| user == current_user}.each do |user| %>
         <tr>
           <td style="color: #FFFFFF"><%= user.id %></td>
           <td style="color: #FFFFFF"><%= user.name %></td>
           <td style="color: #FFFFFF"><%= user.email %></td>
-          <td style="color: #FF8C00"><%= link_to "Voir le Profil", user_path(user), class: "btn btn-outline btn-sm", id: "profil" %></td>
+          <td style="color: #FF8C00">
+            <%= link_to "Voir le Profil", user_path(user), :class=>"btn btn-sm btn-outline", :id=>"profil" %>
+            <%= link_to 'Inviter', event_users_path(user), :class=>"btn btn-sm btn-outline", :method=>:get, :id=>"inviter" %>
+          </td>
         </tr>
       <% end %>
   </table>

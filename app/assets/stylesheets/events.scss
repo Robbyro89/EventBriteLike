@@ -63,3 +63,15 @@
     background-color: #FF0000!important;
   }
 }
+
+#joindre {
+  font-family: serif;
+  font-weight: bolder;
+  border-color: #FFFFFF!important;
+  background-color: #FFFFFF!important;
+  color: purple!important;
+  &:hover {
+    color: #FFFFFF!important;
+    background-color: purple!important;
+  }
+}

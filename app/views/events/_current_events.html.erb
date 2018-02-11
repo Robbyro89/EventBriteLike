@@ -1,24 +1,25 @@
-<table class="table">
+<table class="table table-bordered" style="color: #FFFFFF">
   <thead>
     <tr>
-      <th style="color: #FFFFFF"><b>Lieu</b></th>
-      <th style="color: #FFFFFF"><b>Date</b></th>
-      <th style="color: #FFFFFF"><b>Créateur</b></th>
-      <th style="color: #FFFFFF"><b>Action(s)</b></th>
+      <th><b>Lieu</b></th>
+      <th><b>Date</b></th>
+      <th><b>Créateur</b></th>
+      <th><b>Action(s)</b></th>
     </tr>
   </thead>
 
   <tbody>
     <% @events.current.each do |event| %>
       <tr>
-        <td style="color: #FFFFFF"><%= event.place %></td>
-        <td style="color: #FFFFFF"><%= event.date.strftime("%d-%b-%Y") %></td>
-        <td style="color: #FFFFFF"><%= event.creator.name %></td>
+        <td><%= event.place %></td>
+        <td><%= event.date.strftime("%d-%b-%Y") %></td>
+        <td><%= event.creator.name %></td>
         <% if logged_in? %>
           <td>
-            <%= link_to 'Visionner', event, :class=>"btn btn-sm btn-outline", :method=>:get :id=>"voir" %>
+            <%= link_to 'Visionner', event, :class=>"btn btn-sm btn-outline", :method=>:get, :id=>"voir" %>
+            <%= link_to 'Inviter', event_users_path(event), :class=>"btn btn-sm btn-outline", :method=>:get, :id=>"inviter" %>
           <% if !(event.attendees.include? current_user) %>
-            <%= link_to 'Participer',subscribe_path(id: event.id) , :class=>"btn btn-sm btn-outline", :method=>:post %>
+            <%= link_to 'Rejoindre',subscribe_path(id: event.id) , :class=>"btn btn-sm btn-outline", :method=>:post, :id=>"joindre" %>
           </td>
           <% end %>
         <% end %>

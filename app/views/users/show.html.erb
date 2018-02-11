@@ -6,25 +6,25 @@
     <div style="color: #FFFFFF"><i>Aucun Evénement</i></div>
     <br>
   <% else %>
-  <table class="table">
+  <table class="table table-bordered"  style="color:#FFFFFF">
     <thead>
       <tr>
-        <th style="color:#FFFFFF"><b>Lieu</b></th>
-        <th style="color:#FFFFFF"><b>Date</b></th>
-        <th style="color:#FFFFFF"><b>Evénement</b></th>
-        <th style="color:#FFFFFF"><b>Action(s)</b></th>
+        <th><b>Date</b></th>
+        <th><b>Lieu</b></th>
+        <th><b>Evénement</b></th>
+        <th><b>Action(s)</b></th>
       </tr>
     </thead>
 
     <tbody>
       <% current_user.created_events.each do |event| %>
         <tr>
-          <td style="color:#FFFFFF"><%= event.place %></td>
-          <td style="color:#FFFFFF"><%= event.date.strftime("%d-%b-%Y") %></td>
-          <td style="color:#FFFFFF"><%= event.description%></td>
+          <td><%= event.date.strftime("%d-%b-%Y") %></td>
+          <td><%= event.place %></td>
+          <td><%= event.description%></td>
           <td>
-            <%= link_to 'Inviter', event_users_path(event), :class=>"btn btn-sm btn-outline", :method=>:get, :id=>"inviter" %>
             <%= link_to 'Visionner', event, :class=>"btn btn-sm btn-outline", :method=>:get, :id=>"voir" %>
+            <%= link_to 'Inviter', event_users_path(event), :class=>"btn btn-sm btn-outline", :method=>:get, :id=>"inviter" %>
             <%= link_to 'Supprimer', event, :class=>"btn btn-sm btn-outline", :method=>:delete, :id=>"Supprimer" %>
           </td>
         </tr>
@@ -46,22 +46,23 @@
   <% if !current_user.attended_events.any? %>
     <div style="color: #FFFFFF"><i>Aucun Evénement</i></div>
   <% else %>
-  <table class="table-hover">
+  <table class="table table-bordered" style="color: #FFFFFF">
     <thead>
       <tr>
-        <th>Evénement</th>
         <th>Date</th>
         <th>Lieu</th>
+        <th>Evénement</th>
+        <th>Action(s)</th>
       </tr>
     </thead>
 
     <tbody>
       <% current_user.attended_events.each do |event| %>
         <tr>
-          <td><%= event.description%></td>
           <td><%= event.date.strftime("%d-%b-%Y") %></td>
           <td><%= event.place %></td>
-          <td><%= link_to 'Voir', event, :class=>"btn btn-sm btn-info", :method=>:get%></td>
+          <td><%= event.description%></td>
+          <td><%= link_to 'Visionner', event, :class=>"btn btn-sm btn-info", :method=>:get, :id=>"voir" %></td>
         </tr>
       <% end %>
     </tbody>
@@ -75,22 +76,23 @@
   <% if !current_user.attended_events.past.any? %>
     <div style="color: #FFFFFF"><i>Aucun Evénement</i></div>
   <% else %>
-  <table class="table-hover">
+  <table class="table table-bordered" style="color: #FFFFFF">
     <thead>
       <tr>
-        <th>Evénement</th>
         <th>Date</th>
         <th>Lieu</th>
+        <th>Evénement</th>
+        <th>Action(s)</th>
       </tr>
     </thead>
 
     <tbody>
       <% current_user.attended_events.past.each do |event| %>
         <tr>
-          <td><%= event.description%></td>
           <td><%= event.date.strftime("%d/%b/%Y") %></td>
           <td><%= event.place %></td>
-          <td><%= link_to 'Voir', event, :class=>"btn btn-sm btn-info", :method=>:get%></td>
+          <td><%= event.description%></td>
+          <td><%= link_to 'Visionner', event, :class=>"btn btn-sm btn-info", :method=>:get, :id=>"voir" %></td>
         </tr>
       <% end %>
     </tbody>

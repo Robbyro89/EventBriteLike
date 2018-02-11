@@ -1,10 +1,10 @@
-<table class="table">
+<table class="table table-bordered" style="color: #FFFFFF">
   <thead>
     <tr>
-      <th style="color: #FFFFFF"><b>Lieu</b></th>
-      <th style="color: #FFFFFF"><b>Date</b></th>
-      <th style="color: #FFFFFF"><b>Créateur</b></th>
-      <th style="color: #FFFFFF"><b>Action(s)</b></th>
+      <th><b>Lieu</b></th>
+      <th><b>Date</b></th>
+      <th><b>Créateur</b></th>
+      <th><b>Action(s)</b></th>
     </tr>
   </thead>
 
@@ -12,9 +12,9 @@
     <% if !@events.nil? %>
       <% @events.past.each do |event| %>
         <tr>
-          <td style="color: #FFFFFF"><%= event.place %></td>
-          <td style="color: #FFFFFF"><%= event.date.strftime("%d-%b-%Y") %></td>
-          <td style="color: #FFFFFF"><%= event.creator.name %></td>
+          <td><%= event.place %></td>
+          <td><%= event.date.strftime("%d-%b-%Y") %></td>
+          <td><%= event.creator.name %></td>
           <% if logged_in? %>
           <td><%= link_to 'Visionner', event, :class=>"btn btn-sm btn-outline", :method=>:get, :id=>"voir" %></td>
           <% end %>
